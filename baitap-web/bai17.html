@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 17 - Domain & DNS</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <a class="brand" href="index.html"><img src="images/logo.svg" alt="Logo NP" width="32" height="32"><span>Bài tập Web</span></a>
+        <div class="links">
+            <a href="index.html">Trang chủ</a>
+            <a href="bai17.html" class="active" aria-current="page">Bài 17</a>
+            <a href="bai18.html">Bài 18</a>
+            <a href="bai19.html">Bài 19</a>
+            <a href="bai20.html">Bài 20</a>
+            <a href="bai21.html">Bài 21</a>
+            <a href="bai22.html">Bài 22</a>
+            <a href="den-keo-quan.html">Đèn kéo quân</a>
+        </div>
+    </nav>
+
+    <header class="page-head">
+        <h1>Bài 17: Đăng ký domain và kiểm tra DNS</h1>
+        <p>DuckDNS và nslookup</p>
+        <div class="sv-info"><span data-sv="ten"></span> · MSSV: <span data-sv="mssv"></span></div>
+    </header>
+
+    <main>
+        <h2>Mục tiêu</h2>
+        <p>Hiểu cách đăng ký domain và xem cách DNS hoạt động.</p>
+        <h2>Các bước đã thực hiện</h2>
+        <ol>
+            <li>Đăng ký subdomain miễn phí <code>phuocvhu.duckdns.org</code> trên DuckDNS.</li>
+            <li>Cập nhật địa chỉ IP cho domain (192.168.10.1), DuckDNS báo <em>success</em>.</li>
+            <li>Kiểm tra DNS bằng Command Prompt: <code>nslookup phuocvhu.duckdns.org</code> và <code>nslookup -type=NS duckdns.org</code>.</li>
+        </ol>
+        <h2>Hình kết quả</h2>
+        <figure class="result">
+            <img class="shot" src="images/results/bai17-1.png" alt="Trang quản lý domain DuckDNS: phuocvhu.duckdns.org đã cập nhật IP">
+            <figcaption>Trang quản lý domain DuckDNS: phuocvhu.duckdns.org đã cập nhật IP</figcaption>
+        </figure>
+        <figure class="result">
+            <img class="shot" src="images/results/bai17-2.png" alt="Kết quả nslookup: domain phân giải ra IP 192.168.10.1 và danh sách nameserver của duckdns.org">
+            <figcaption>Kết quả nslookup: domain phân giải ra IP 192.168.10.1 và danh sách nameserver của duckdns.org</figcaption>
+        </figure>
+    </main>
+
+    <footer>© 2026 <span data-sv="ten"></span> · <span data-sv="lop"></span></footer>
+    <script src="js/config.js"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>

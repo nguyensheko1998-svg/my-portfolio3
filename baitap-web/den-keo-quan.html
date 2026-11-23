@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đèn kéo quân</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="lantern-page">
+    <nav>
+        <a class="brand" href="index.html"><img src="images/logo.svg" alt="Logo NP" width="32" height="32"><span>Bài tập Web</span></a>
+        <div class="links">
+            <a href="index.html">Trang chủ</a>
+            <a href="bai17.html">Bài 17</a>
+            <a href="bai18.html">Bài 18</a>
+            <a href="bai19.html">Bài 19</a>
+            <a href="bai20.html">Bài 20</a>
+            <a href="bai21.html">Bài 21</a>
+            <a href="bai22.html">Bài 22</a>
+            <a href="den-keo-quan.html" class="active" aria-current="page">Đèn kéo quân</a>
+        </div>
+    </nav>
+
+    <header class="page-head">
+        <h1>Đèn kéo quân</h1>
+        <p>Rê chuột vào một hình để đèn dừng, rê ra để đèn quay tiếp</p>
+        <div class="sv-info"><span data-sv="ten"></span> · MSSV: <span data-sv="mssv"></span></div>
+    </header>
+
+    <section class="stage">
+        <div class="hanger"></div>
+        <div class="cap"></div>
+        <div class="scene">
+            <div class="lantern" id="lantern">
+                    <div class="face" data-name="hình 1"><img src="images/lantern1.jpg" alt="Hình 1 trên đèn kéo quân" draggable="false"></div>
+                    <div class="face" data-name="hình 2"><img src="images/lantern2.jpg" alt="Hình 2 trên đèn kéo quân" draggable="false"></div>
+                    <div class="face" data-name="hình 3"><img src="images/lantern3.jpg" alt="Hình 3 trên đèn kéo quân" draggable="false"></div>
+                    <div class="face" data-name="hình 4"><img src="images/lantern4.jpg" alt="Hình 4 trên đèn kéo quân" draggable="false"></div>
+                    <div class="face" data-name="hình 5"><img src="images/lantern5.jpg" alt="Hình 5 trên đèn kéo quân" draggable="false"></div>
+                    <div class="face" data-name="hình 6"><img src="images/lantern6.jpg" alt="Hình 6 trên đèn kéo quân" draggable="false"></div>
+            </div>
+        </div>
+        <div class="base"></div>
+        <div class="tassel"></div>
+
+        <div class="controls">
+            <p id="status" aria-live="polite">Đèn đang quay</p>
+            <label>Tốc độ quay <input type="range" id="speed" min="5" max="90" value="22"></label>
+        </div>
+    </section>
+
+    <footer>© 2026 <span data-sv="ten"></span> · <span data-sv="lop"></span></footer>
+    <script src="js/config.js"></script>
+    <script src="js/site.js"></script>
+    <script src="js/lantern.js"></script>
+</body>
+</html>

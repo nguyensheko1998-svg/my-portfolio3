@@ -1,0 +1,108 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --navy: #0b2a4a;
+    --navy-deep: #07203a;
+    --cyan: #27c2ff;
+    --paper: #f3f6f9;
+    --ink: #14263a;
+    --muted: #5a6b7c;
+}
+
+body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: var(--paper); color: var(--ink); }
+a { color: var(--navy); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+
+/* Menu chính */
+nav { background: var(--navy-deep); padding: .75rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+nav .brand { display: flex; align-items: center; gap: .6rem; color: white; font-weight: 700; text-decoration: none; }
+nav .links { display: flex; flex-wrap: wrap; gap: .25rem .2rem; }
+nav .links a { color: #cfe6f5; padding: .2rem .7rem; text-decoration: none; border-bottom: 2px solid transparent; }
+nav .links a:hover { color: white; }
+nav .links a.active { color: white; border-bottom-color: var(--cyan); }
+
+/* Đầu trang */
+.page-head { background: var(--navy); color: white; text-align: center; padding: 3rem 1.5rem; }
+.page-head h1 { font-size: 2rem; line-height: 1.25; }
+.page-head p { color: #cfe6f5; }
+.sv-info { display: inline-block; margin-top: 1rem; padding: .4rem 1rem; border: 1px solid var(--cyan); border-radius: 999px; font-size: .95rem; color: white; }
+.todo { background: #ffe066; color: #5b4500; padding: 0 .35rem; border-radius: 4px; font-weight: 700; }
+
+.hero { display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap; text-align: left; }
+.hero h1 { max-width: 20ch; }
+.avatar { width: 180px; height: 240px; object-fit: cover; border-radius: 10px; border: 4px solid var(--cyan); background: var(--cyan); }
+
+main { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+main h2 { margin: 1.75rem 0 .5rem; color: var(--navy); }
+main h2:first-child { margin-top: 0; }
+main p, main ul, main ol { margin-bottom: .75rem; }
+main ul, main ol { padding-left: 1.4rem; }
+code, pre { font-family: Consolas, 'Courier New', monospace; }
+pre { background: #0f2238; color: #d7ecfb; padding: 1rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1rem; }
+:not(pre) > code { background: #e3ecf4; padding: .05rem .35rem; border-radius: 4px; }
+
+/* Thẻ bài tập ở trang chủ */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+.card { display: block; background: white; border-radius: 8px; border-left: 5px solid var(--cyan); padding: 1.25rem 1.5rem; text-decoration: none; color: var(--ink); box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+.card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.16); }
+.card strong { display: block; color: var(--navy); font-size: 1.1rem; }
+.card span { color: var(--muted); font-size: .92rem; }
+
+/* Khung ảnh kết quả */
+figure.result { margin: 1rem 0 1.5rem; background: white; padding: .75rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+figure.result img { display: block; max-width: 100%; border-radius: 4px; }
+figure.result figcaption { color: var(--muted); font-size: .9rem; margin-top: .5rem; }
+.shot-missing { border: 2px dashed #9fb3c6; background: #eef3f8; color: var(--muted); padding: 2.5rem 1rem; text-align: center; border-radius: 6px; }
+
+.note { background: #fff8db; border-left: 5px solid #f2c200; padding: 1rem 1.25rem; border-radius: 6px; margin: 1rem 0; }
+
+footer { text-align: center; padding: 2rem 1rem; color: var(--muted); font-size: .9rem; }
+
+@media (max-width: 600px) {
+    .hero { text-align: center; }
+    .page-head h1 { font-size: 1.6rem; }
+}
+
+/* ===== Trang Đèn kéo quân ===== */
+body.lantern-page { background: radial-gradient(ellipse at 50% 35%, #5a0f14 0%, #25070b 60%, #12040a 100%); color: #ffe9c2; min-height: 100vh; }
+.lantern-page nav { background: #12040a; }
+.lantern-page .page-head { background: transparent; padding-bottom: 1rem; }
+.lantern-page .page-head p { color: #f3cf9a; }
+.lantern-page footer { color: #c99c6a; }
+
+.stage { display: flex; flex-direction: column; align-items: center; padding: 1rem 1rem 2rem; }
+.hanger { width: 3px; height: 40px; background: #d9a441; }
+.cap { width: 210px; height: 34px; background: linear-gradient(#e0b04a, #b9801f); clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%); }
+.scene { perspective: 1200px; width: 340px; height: 270px; display: flex; align-items: center; justify-content: center; }
+.lantern { position: relative; width: 170px; height: 240px; transform-style: preserve-3d; }
+.face {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    border: 6px solid #c0392b;
+    outline: 2px solid #e0b04a; outline-offset: -8px;
+    background: #fff3d6;
+    box-shadow: 0 0 28px rgba(255, 170, 60, .55), inset 0 0 22px rgba(255, 150, 40, .45);
+    cursor: pointer;
+    transition: box-shadow .2s, filter .2s;
+}
+.face img { width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(.12) saturate(1.05); }
+.face.hot { box-shadow: 0 0 46px rgba(255, 210, 90, .95), inset 0 0 22px rgba(255, 200, 80, .6); filter: brightness(1.08); }
+.base { width: 210px; height: 22px; background: linear-gradient(#b9801f, #e0b04a); clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%); }
+.tassel { width: 4px; height: 56px; background: linear-gradient(#d9a441, #c0392b); border-radius: 2px; }
+
+.controls { margin-top: 1.5rem; text-align: center; }
+#status { font-size: 1.05rem; margin-bottom: .75rem; color: #ffd98a; }
+.controls label { color: #f3cf9a; font-size: .95rem; }
+.controls input[type=range] { vertical-align: middle; width: 180px; margin-left: .5rem; accent-color: #e0b04a; }
+
+@media (max-width: 480px) {
+    .scene { transform: scale(.8); margin: -20px 0; }
+}
+
+/* Ảnh thu nhỏ trên thẻ ở trang chủ */
+.card .thumb { display: block; width: calc(100% + 3rem); margin: -1.25rem -1.5rem 1rem; height: 130px; object-fit: cover; object-position: top; border-radius: 0 8px 0 0; background: #dbe6f0; }
+.card { overflow: hidden; }
+.platform { background: white; border-left: 5px solid var(--cyan); border-radius: 8px; padding: 1rem 1.25rem .25rem; margin: 1.5rem 0 0; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+.platform h3 { color: var(--navy); }
+.platform p { margin-bottom: .5rem; }
+.score { font-size: 1.3rem; font-weight: 700; color: #0a7a3d; }
